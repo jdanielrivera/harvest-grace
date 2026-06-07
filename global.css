@@ -1,0 +1,339 @@
+/* ============================================================
+   GRACE & HARVEST — Global Custom CSS for Squarespace 7.1
+   Paste this in: Design → Custom CSS
+   ============================================================ */
+
+/* ---------- Google Fonts Import ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap');
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --cream:        #FAF6EE;
+  --linen:        #F2EAD8;
+  --warm-white:   #FDFAF4;
+  --sage:         #3D4C38;
+  --sage-light:   #5C6B55;
+  --gold:         #C4933A;
+  --gold-light:   #D4A84B;
+  --gold-muted:   #E8C97A;
+  --brown-warm:   #6B5240;
+  --text-dark:    #2A2018;
+  --text-mid:     #4A3F32;
+  --text-light:   #7A6E63;
+  --border:       #E2D9C8;
+  --shadow-soft:  0 2px 16px rgba(60,45,20,0.08);
+  --shadow-card:  0 4px 24px rgba(60,45,20,0.10);
+  --radius:       4px;
+  --font-serif:   'Cormorant Garamond', Georgia, serif;
+  --font-sans:    'Jost', sans-serif;
+}
+
+/* ---------- Base Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  background-color: var(--warm-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Typography Globals ---------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text-dark);
+}
+
+h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); }
+h2 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); }
+h3 { font-size: clamp(1.2rem, 1.8vw, 1.5rem); }
+
+p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-mid);
+}
+
+a { color: var(--sage); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--gold); }
+
+/* ---------- Section Labels (e.g. "FAITH & DEVOTIONALS") ---------- */
+.gh-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  display: inline-block;
+  background: var(--sage);
+  color: #fff !important;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--sage-light); transform: translateY(-1px); }
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--sage) !important;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 13px 28px;
+  border: 1.5px solid var(--sage);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-outline:hover { background: var(--sage); color: #fff !important; }
+
+.btn-gold {
+  display: inline-block;
+  background: var(--gold);
+  color: #fff !important;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-gold:hover { background: var(--gold-light); }
+
+/* ---------- Dividers ---------- */
+.gh-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.gh-divider::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--gold);
+}
+
+/* ---------- Cards ---------- */
+.gh-card {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.gh-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(60,45,20,0.14);
+}
+.gh-card img { width: 100%; display: block; object-fit: cover; }
+
+/* ---------- Section Spacing ---------- */
+.gh-section {
+  padding: 64px 0;
+  background: var(--warm-white);
+}
+.gh-section-alt {
+  padding: 64px 0;
+  background: var(--linen);
+}
+.gh-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Section Header Row ---------- */
+.gh-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.gh-section-header h2 {
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+}
+.gh-view-all {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+.gh-view-all:hover { color: var(--gold); }
+.gh-view-all::after { content: '→'; }
+
+/* ---------- Top Nav Bar (secondary) ---------- */
+.gh-topnav-wrapper {
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+}
+.gh-topnav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.gh-topnav::-webkit-scrollbar { display: none; }
+.gh-topnav a {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  padding: 14px 18px;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+.gh-topnav a:hover,
+.gh-topnav a.active {
+  color: var(--sage);
+  border-bottom-color: var(--gold);
+}
+.gh-topnav .btn-subscribe {
+  margin-left: auto;
+  background: var(--sage);
+  color: #fff !important;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: var(--radius);
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.gh-topnav .btn-subscribe:hover { background: var(--sage-light); }
+
+/* ---------- Category Strip ---------- */
+.gh-cat-strip {
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+.gh-cat-strip .gh-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+.gh-cat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 8px;
+  border-radius: var(--radius);
+  transition: background 0.2s;
+  cursor: pointer;
+  text-align: center;
+}
+.gh-cat-item:hover { background: var(--linen); }
+.gh-cat-item .icon {
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+.gh-cat-item .cat-name {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+}
+.gh-cat-item .cat-sub {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  color: var(--text-light);
+}
+
+/* ---------- Read More Arrow Links ---------- */
+.gh-read-more {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s, gap 0.2s;
+}
+.gh-read-more::after { content: '→'; transition: transform 0.2s; }
+.gh-read-more:hover { color: var(--gold); }
+.gh-read-more:hover::after { transform: translateX(3px); }
+
+/* ---------- Checkmarks ---------- */
+.gh-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 20px;
+}
+.gh-check-list li {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--text-mid);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.gh-check-list li::before {
+  content: '✓';
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .gh-cat-strip .gh-container { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 600px) {
+  .gh-cat-strip .gh-container { grid-template-columns: repeat(3, 1fr); }
+  .gh-section { padding: 40px 0; }
+}
